@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Today Shop | FAQ</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="top-header">
+        <div class="container">
+            <div class="row align-items-center g-2">
+                <div class="col-4 col-md-3">
+                    <div class="logo-section">
+                        <i class="bi bi-bag-heart logo-icon"></i>
+                        <h1 class="logo-text">Today Shop</h1>
+                    </div>
+                </div>
+                <div class="col-8 col-md-6">
+                    <div class="search-container">
+                        <i class="bi bi-search search-icon"></i>
+                        <input type="text" class="search-input" id="searchInput" placeholder="Search vegetables, fruits, dairy...">
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 mt-2 mt-md-0">
+                    <div class="header-icons">
+                        <i class="bi bi-person-circle"></i>
+                        <i class="bi bi-cart3 cart-btn" id="cartIconBtn"></i>
+                        <span id="cartCountBadge" class="cart-count-badge">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVIGATION MENU -->
+    <div class="nav-menu">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="index.html"><i class="bi bi-house"></i> Home</a></li>
+                <li><a href="contact.html"><i class="bi bi-envelope"></i> Contact</a></li>
+                <li><a href="faq.html" class="active"><i class="bi bi-question-circle"></i> FAQ</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FAQ PAGE -->
+    <div class="page-container">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="bi bi-question-circle"></i> Frequently Asked Questions</h1>
+                <p>Find answers to the most common questions about our grocery delivery service.</p>
+            </div>
+
+            <!-- FAQ Search -->
+            <div class="faq-search-wrapper">
+                <div class="faq-search-box">
+                    <i class="bi bi-search"></i>
+                    <input type="text" id="faqSearchInput" placeholder="Search FAQs..." oninput="filterFAQs()">
+                </div>
+            </div>
+
+            <!-- FAQ Categories -->
+            <div class="faq-container" id="faqContainer">
+                <!-- Category 1: Ordering -->
+                <div class="faq-category">
+                    <h3><i class="bi bi-cart-check"></i> Ordering</h3>
+                    
+                    <div class="faq-item active">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I place an order?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Simply browse our products, click "Add to Cart" on items you want, and proceed to checkout. You can review your cart anytime by clicking the cart icon in the header. Once you're ready, click "Proceed to Checkout" to complete your order.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Can I modify my order after placing it?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, you can modify your order up to 30 minutes before the scheduled delivery time. Contact our support team at support@todayshop.com or call +91 98765 43210 for assistance with modifications.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Is there a minimum order value?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, we don't have a minimum order value. You can order any amount, and we'll deliver it to your doorstep. However, orders below ₹500 will have a nominal delivery fee of ₹50.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I track my order?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Once your order is confirmed, you'll receive a confirmation email with a tracking link. You can also track your order in real-time through our mobile app or by logging into your account on our website.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Delivery -->
+                <div class="faq-category">
+                    <h3><i class="bi bi-truck"></i> Delivery</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What are the delivery charges?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Delivery is completely free on orders above ₹500. A nominal fee of ₹50 is charged for orders below ₹500. We also offer express delivery for an additional ₹100 if you need your order within 20 minutes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How long does delivery take?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We deliver within 30-60 minutes for standard orders. During peak hours (6 PM - 9 PM), delivery may take up to 90 minutes. Express delivery is available for orders that need to be delivered within 20 minutes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Do you deliver on Sundays and holidays?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we deliver 7 days a week including Sundays and all major holidays. Delivery timings on Sunday are 9:00 AM to 9:00 PM. On other days, we deliver from 8:00 AM to 10:00 PM.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What areas do you deliver to?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We currently deliver to all major cities across India including Mumbai, Delhi, Bangalore, Chennai, Hyderabad, Pune, Kolkata, and Ahmedabad. We're expanding to more cities every month!</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Payment -->
+                <div class="faq-category">
+                    <h3><i class="bi bi-credit-card"></i> Payment</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What payment methods do you accept?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We accept all major credit/debit cards (Visa, Mastercard, RuPay), UPI (Google Pay, PhonePe, Paytm, Amazon Pay), Net Banking (all major banks), and Cash on Delivery. We also accept Sodexo and other meal vouchers.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Is it safe to pay online?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Absolutely! All transactions are encrypted and secure using 256-bit SSL technology. We never store your payment information on our servers. We are PCI-DSS compliant, ensuring your payment data is always protected.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Do you offer Cash on Delivery?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, we offer Cash on Delivery for all orders. Our delivery partners will collect the payment when they deliver your order. Please keep the exact change ready for a smooth transaction.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Returns & Refunds -->
+                <div class="faq-category">
+                    <h3><i class="bi bi-arrow-repeat"></i> Returns & Refunds</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What is your return policy?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>We offer a 100% satisfaction guarantee. If you're not satisfied with any product, you can return it within 24 hours of delivery. Simply contact our support team and we'll arrange a pickup. Perishable items must be returned within 2 hours of delivery.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How long does it take to get a refund?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Refunds are processed within 3-5 business days after we receive the returned items. The amount will be credited to your original payment method. For Cash on Delivery orders, we'll send a bank transfer or store credit.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What if I receive a damaged or wrong product?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>In the rare event that you receive a damaged or wrong product, please contact us immediately. We'll arrange for a replacement or refund at no extra cost. Please keep the product packaging for inspection.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 5: Account -->
+                <div class="faq-category">
+                    <h3><i class="bi bi-person"></i> Account</h3>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I create an account?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Click on the person icon in the header and select "Sign Up". Fill in your details including name, email, phone number, and address. You'll receive a verification email to confirm your account. Once verified, you're ready to start shopping!</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I reset my password?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Click on the person icon, select "Forgot Password", enter your registered email address, and follow the instructions sent to your inbox. You'll receive a password reset link that expires in 24 hours.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How can I change my delivery address?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Log in to your account, go to "My Profile" or "Account Settings", and click on "Addresses". You can add, edit, or delete delivery addresses from there. Make sure to set your default address correctly.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How do I view my order history?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Log in to your account and click on "My Orders" from the dashboard. You'll see a complete list of all your past orders with their status, total amount, and delivery details. You can also reorder items from your history.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART SIDEBAR -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header">
+            <h5><i class="bi bi-bag-check"></i> Your Cart</h5>
+            <button id="closeCartBtn" class="close-cart-btn"><i class="bi bi-x-lg"></i></button>
+        </div>
+        <div id="cartItemsList" class="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total Items:</span>
+                <span id="cartTotalQty">0</span>
+            </div>
+            <div class="cart-total-row total-price-row">
+                <span>Total Price:</span>
+                <span id="cartTotalPrice">₹0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout <i class="bi bi-arrow-right-circle"></i></button>
+        </div>
+    </div>
+    <div id="cartOverlay" class="cart-overlay"></div>
+
+    <!-- TOAST -->
+    <div id="toastMessage" class="toast-message">Item added to cart</div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5 class="footer-logo">🛒 Today Shop</h5>
+                    <p class="footer-text">Fresh groceries delivered to your doorstep. Quality you can trust.</p>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6>Shop</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">All Products</a></li>
+                        <li><a href="#">Offers</a></li>
+                        <li><a href="#">Weekly Deals</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-3">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="faq.html">FAQs</a></li>
+                        <li><a href="#">Delivery Info</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6>Download App</h6>
+                    <div class="d-flex gap-3">
+                        <i class="bi bi-google-play fs-2 app-icon"></i>
+                        <i class="bi bi-apple fs-2 app-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="copyright">© 2025 Today Shop — Fresh Grocery Delivery</div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
