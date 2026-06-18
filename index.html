@@ -1,230 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover" />
-  <title>Today Shop · Single Page</title>
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet" />
-  <!-- Separate CSS file -->
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover" />
+    <title>Today Shop · Single Page</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <!-- Separate CSS -->
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<!-- ===== HEADER ===== -->
-<div class="top-header">
-  <div class="container">
-    <div class="row align-items-center g-2">
-      <div class="col-4 col-md-3">
-        <div class="logo-section">
-          <i class="bi bi-bag-heart logo-icon"></i>
-          <h1 class="logo-text">Today Shop</h1>
+    <!-- ===== STICKY HEADER ===== -->
+    <div class="top-header">
+        <div class="container">
+            <div class="header-wrapper">
+                <!-- Logo - Left -->
+                <div class="logo-section">
+                    <i class="bi bi-bag-heart logo-icon"></i>
+                    <h1 class="logo-text">Today Shop</h1>
+                </div>
+                
+                <!-- Search - Center -->
+                <div class="search-container">
+                    <i class="bi bi-search search-icon"></i>
+                    <input type="text" class="search-input" id="searchInput" placeholder="Search vegetables, fruits, dairy...">
+                </div>
+                
+                <!-- Icons - Right -->
+                <div class="header-icons">
+                    <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle Dark Mode">
+                        <i class="bi bi-moon-fill"></i>
+                    </button>
+                    <i class="bi bi-person-circle d-none d-sm-inline"></i>
+                    <span class="cart-btn-wrapper">
+                        <i class="bi bi-cart3 cart-btn" id="cartIconBtn"></i>
+                        <span id="cartCountBadge" class="cart-count-badge">0</span>
+                    </span>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-8 col-md-6">
-        <div class="search-container">
-          <i class="bi bi-search search-icon"></i>
-          <input type="text" class="search-input" id="searchInput" placeholder="Search vegetables, fruits, dairy...">
-        </div>
-      </div>
-      <div class="col-12 col-md-3 mt-2 mt-md-0">
-        <div class="header-icons">
-          <i class="bi bi-person-circle"></i>
-          <i class="bi bi-cart3 cart-btn" id="cartIconBtn"></i>
-          <span id="cartCountBadge" class="cart-count-badge">0</span>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
 
-<!-- ===== NAV (anchor links for smooth scroll) ===== -->
-<div class="nav-menu">
-  <div class="container">
-    <ul class="nav-list">
-      <li><a href="#homeSection" class="active"><i class="bi bi-house"></i> Home</a></li>
-      <li><a href="#contactSection"><i class="bi bi-envelope"></i> Contact</a></li>
-      <li><a href="#faqSection"><i class="bi bi-question-circle"></i> FAQ</a></li>
-    </ul>
-  </div>
-</div>
-
-<!-- ===== HOME SECTION ===== -->
-<section id="homeSection">
-  <!-- CATEGORIES -->
-  <div class="categories-section">
-    <div class="container">
-      <div class="categories-wrapper" id="categoriesWrapper">
-        <button class="cat-btn active" data-cat="all">All</button>
-        <button class="cat-btn" data-cat="Dairy">Dairy</button>
-        <button class="cat-btn" data-cat="Produce">Produce</button>
-        <button class="cat-btn" data-cat="Meat">Meat</button>
-        <button class="cat-btn" data-cat="Bakery">Bakery</button>
-        <button class="cat-btn" data-cat="Frozen">Frozen</button>
-        <button class="cat-btn" data-cat="Beverages">Beverages</button>
-        <button class="cat-btn" data-cat="Household">Household</button>
-      </div>
+    <!-- ===== STICKY NAV ===== -->
+    <div class="nav-menu">
+        <div class="container">
+            <ul class="nav-list">
+                <li><a href="#homeSection" class="active"><i class="bi bi-house"></i> <span class="nav-text">Home</span></a></li>
+                <li><a href="#contactSection"><i class="bi bi-envelope"></i> <span class="nav-text">Contact</span></a></li>
+                <li><a href="#faqSection"><i class="bi bi-question-circle"></i> <span class="nav-text">FAQ</span></a></li>
+            </ul>
+        </div>
     </div>
-  </div>
 
-  <!-- HERO -->
-  <div class="hero-banner">
-    <div class="container">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-7">
-          <div class="hero-tag">TODAY GROCERY SHOP</div>
-          <h1 class="hero-title">Everything You Need, <br>Every Day!</h1>
-          <div class="stats-row">
-            <div class="stat-pill"><span>🥚</span> EGGS</div>
-            <div class="stat-pill"><span>🥩</span> MEATS</div>
-            <div class="stat-pill"><span>🥬</span> VEGIES</div>
-            <div class="stat-pill"><span>🌾</span> FLOURS</div>
-          </div>
+    <!-- ===== HOME SECTION ===== -->
+    <section id="homeSection">
+        <div class="categories-section">
+            <div class="container">
+                <div class="categories-wrapper" id="categoriesWrapper">
+                    <button class="cat-btn active" data-cat="all">All</button>
+                    <button class="cat-btn" data-cat="Dairy">Dairy</button>
+                    <button class="cat-btn" data-cat="Produce">Produce</button>
+                    <button class="cat-btn" data-cat="Meat">Meat</button>
+                    <button class="cat-btn" data-cat="Bakery">Bakery</button>
+                    <button class="cat-btn" data-cat="Frozen">Frozen</button>
+                    <button class="cat-btn" data-cat="Beverages">Beverages</button>
+                    <button class="cat-btn" data-cat="Household">Household</button>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-5 mt-4 mt-lg-0">
-          <div class="fresh-card">
-            <h3>Fresh Groceries at Your Doorstep</h3>
-            <p>Premium groceries delivered fast.</p>
-            <button class="btn-start" id="startShoppingBtn">Start Shopping <i class="bi bi-arrow-right"></i></button>
-          </div>
+
+        <!-- ===== HERO ===== -->
+        <div class="hero-banner">
+            <div class="container">
+                <div class="row align-items-center g-4">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="hero-tag">🚀 DELIVERY IN 15 MINUTES</div>
+                        <h1 class="hero-title">Fresh Groceries <br>Delivered in <span class="highlight">15 Minutes</span></h1>
+                        <div class="hero-buttons">
+                            <button class="btn-hero-primary" id="shopNowBtn">Shop Now <i class="bi bi-arrow-right"></i></button>
+                            <button class="btn-hero-secondary" id="browseCategoriesBtn">Browse Categories <i class="bi bi-grid"></i></button>
+                        </div>
+                        <div class="trust-badges">
+                            <div class="trust-item">
+                                <i class="bi bi-check-circle-fill"></i>
+                                <span class="trust-text">Fresh Produce</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="bi bi-truck"></i>
+                                <span class="trust-text">Free Delivery Above ₹499</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="bi bi-people-fill"></i>
+                                <span class="trust-text">10,000+ Happy Customers</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12 mt-4 mt-lg-0">
+                        <div class="fresh-card">
+                            <h3>Fresh Groceries at Your Doorstep</h3>
+                            <p>Premium groceries delivered fast.</p>
+                            <button class="btn-start" id="startShoppingBtn">Start Shopping <i class="bi bi-arrow-right"></i></button>
+                            <div class="delivery-promise">
+                                <i class="bi bi-clock"></i>
+                                <span>Guaranteed delivery in <strong>15 minutes</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="container my-4 my-md-5">
+            <h2 class="section-title">Featured Products</h2>
+            <div class="row g-3 g-md-4" id="productsContainer">
+                <!-- Products will be rendered by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section id="contactSection">
+        <div class="page-container">
+            <div class="container">
+                <div class="page-header">
+                    <h1><i class="bi bi-envelope-paper"></i> Contact Us</h1>
+                    <p>We'd love to hear from you! Reach out to us anytime.</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-lg-7 col-md-12">
+                        <div class="contact-form-wrapper">
+                            <h3>Send Us a Message</h3>
+                            <form id="contactForm" onsubmit="return handleContactForm(event)">
+                                <div class="mb-3">
+                                    <label for="nameInput" class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="emailInput" class="form-label">Email Address</label>
+                                    <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="subjectInput" class="form-label">Subject</label>
+                                    <input type="text" class="form-control" id="subjectInput" placeholder="Subject of your message" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="messageInput" class="form-label">Message</label>
+                                    <textarea class="form-control" id="messageInput" rows="5" placeholder="Write your message here..." required></textarea>
+                                </div>
+                                <button type="submit" class="btn-submit"><i class="bi bi-send"></i> Send Message</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-12">
+                        <div class="contact-info-wrapper">
+                            <h3>Get in Touch</h3>
+                            <div class="contact-info-item"><i class="bi bi-geo-alt"></i><div><h6>Address</h6><p>123 Grocery Lane, Food City, FC 12345</p></div></div>
+                            <div class="contact-info-item"><i class="bi bi-telephone"></i><div><h6>Phone</h6><p>+91 98765 43210</p></div></div>
+                            <div class="contact-info-item"><i class="bi bi-envelope"></i><div><h6>Email</h6><p>support@todayshop.com</p></div></div>
+                            <div class="contact-info-item"><i class="bi bi-clock"></i><div><h6>Working Hours</h6><p>Mon - Sat: 8:00 AM - 10:00 PM<br>Sunday: 9:00 AM - 9:00 PM</p></div></div>
+                            <div class="social-links"><h6>Follow Us</h6><div class="social-icons">
+                                <a href="#"><i class="bi bi-facebook"></i></a>
+                                <a href="#"><i class="bi bi-instagram"></i></a>
+                                <a href="#"><i class="bi bi-twitter"></i></a>
+                                <a href="#"><i class="bi bi-youtube"></i></a>
+                            </div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ SECTION ===== -->
+    <section id="faqSection">
+        <div class="page-container">
+            <div class="container">
+                <div class="page-header">
+                    <h1><i class="bi bi-question-circle"></i> Frequently Asked Questions</h1>
+                    <p>Find answers to the most common questions about our grocery delivery service.</p>
+                </div>
+                <div class="faq-search-wrapper">
+                    <div class="faq-search-box">
+                        <i class="bi bi-search"></i>
+                        <input type="text" id="faqSearchInput" placeholder="Search FAQs..." oninput="filterFAQs()">
+                    </div>
+                </div>
+                <div class="faq-container" id="faqContainer">
+                    <div class="faq-category"><h3><i class="bi bi-cart-check"></i> Ordering</h3>
+                        <div class="faq-item active"><div class="faq-question" onclick="toggleFAQ(this)"><span>How do I place an order?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>Simply browse our products, click "Add to Cart" on items you want, and proceed to checkout.</p></div></div>
+                        <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Can I modify my order?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>Yes, up to 30 minutes before delivery. Contact support@todayshop.com</p></div></div>
+                    </div>
+                    <div class="faq-category"><h3><i class="bi bi-truck"></i> Delivery</h3>
+                        <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>What are the delivery charges?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>Free above ₹499. ₹50 below ₹499.</p></div></div>
+                        <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>How long does delivery take?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>15-30 min standard, express 15 min.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CART SIDEBAR ===== -->
+    <div id="cartSidebar" class="cart-sidebar">
+        <div class="cart-header"><h5><i class="bi bi-bag-check"></i> Your Cart</h5><button id="closeCartBtn" class="close-cart-btn"><i class="bi bi-x-lg"></i></button></div>
+        <div id="cartItemsList" class="cart-items-container"></div>
+        <div class="cart-footer">
+            <div class="cart-total-row"><span>Total Items:</span><span id="cartTotalQty">0</span></div>
+            <div class="cart-total-row total-price-row"><span>Total Price:</span><span id="cartTotalPrice">₹0</span></div>
+            <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout <i class="bi bi-arrow-right-circle"></i></button>
+        </div>
     </div>
-  </div>
+    <div id="cartOverlay" class="cart-overlay"></div>
+    <div id="toastMessage" class="toast-message">Item added to cart</div>
 
-  <!-- PRODUCTS -->
-  <div class="container my-4 my-md-5">
-    <h2 class="section-title">Featured Products</h2>
-    <div class="row g-3 g-md-4" id="productsContainer"></div>
-  </div>
-</section>
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-3 col-sm-6 col-12 mb-3">
+                    <h5 class="footer-logo">🛒 Today Shop</h5>
+                    <p class="footer-text">Fresh groceries delivered to your doorstep. Quality you can trust since 2020.</p>
+                    <div class="social-icons mt-3">
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-twitter"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-12 mb-3">
+                    <h6>About Us</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Why Today Shop</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-6 col-12 mb-3">
+                    <h6>Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#contactSection">Contact Us</a></li>
+                        <li><a href="#faqSection">FAQs</a></li>
+                        <li><a href="#">Delivery Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-6 col-12 mb-3">
+                    <h6>Legal</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 col-sm-12 col-12 mb-3">
+                    <h6>Download App</h6>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#" class="app-download-btn"><i class="bi bi-google-play"></i> <span class="app-text">Google Play</span></a>
+                        <a href="#" class="app-download-btn"><i class="bi bi-apple"></i> <span class="app-text">App Store</span></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="copyright">© 2025 Today Shop — Fresh Grocery Delivery. All rights reserved.</div>
+        </div>
+    </footer>
 
-<!-- ===== CONTACT SECTION ===== -->
-<section id="contactSection">
-  <div class="page-container">
-    <div class="container">
-      <div class="page-header">
-        <h1><i class="bi bi-envelope-paper"></i> Contact Us</h1>
-        <p>We'd love to hear from you! Reach out to us anytime.</p>
-      </div>
-      <div class="row g-4">
-        <div class="col-lg-7">
-          <div class="contact-form-wrapper">
-            <h3>Send Us a Message</h3>
-            <form id="contactForm" onsubmit="return handleContactForm(event)">
-              <div class="mb-3">
-                <label for="nameInput" class="form-label">Full Name</label>
-                <input type="text" class="form-control" id="nameInput" placeholder="Enter your name" required>
-              </div>
-              <div class="mb-3">
-                <label for="emailInput" class="form-label">Email Address</label>
-                <input type="email" class="form-control" id="emailInput" placeholder="Enter your email" required>
-              </div>
-              <div class="mb-3">
-                <label for="subjectInput" class="form-label">Subject</label>
-                <input type="text" class="form-control" id="subjectInput" placeholder="Subject of your message" required>
-              </div>
-              <div class="mb-3">
-                <label for="messageInput" class="form-label">Message</label>
-                <textarea class="form-control" id="messageInput" rows="5" placeholder="Write your message here..." required></textarea>
-              </div>
-              <button type="submit" class="btn-submit"><i class="bi bi-send"></i> Send Message</button>
-            </form>
-          </div>
-        </div>
-        <div class="col-lg-5">
-          <div class="contact-info-wrapper">
-            <h3>Get in Touch</h3>
-            <div class="contact-info-item"><i class="bi bi-geo-alt"></i><div><h6>Address</h6><p>123 Grocery Lane, Food City, FC 12345</p></div></div>
-            <div class="contact-info-item"><i class="bi bi-telephone"></i><div><h6>Phone</h6><p>+91 98765 43210</p></div></div>
-            <div class="contact-info-item"><i class="bi bi-envelope"></i><div><h6>Email</h6><p>support@todayshop.com</p></div></div>
-            <div class="contact-info-item"><i class="bi bi-clock"></i><div><h6>Working Hours</h6><p>Mon - Sat: 8:00 AM - 10:00 PM<br>Sunday: 9:00 AM - 9:00 PM</p></div></div>
-            <div class="social-links"><h6>Follow Us</h6><div class="social-icons">
-              <a href="#"><i class="bi bi-facebook"></i></a>
-              <a href="#"><i class="bi bi-instagram"></i></a>
-              <a href="#"><i class="bi bi-twitter"></i></a>
-              <a href="#"><i class="bi bi-youtube"></i></a>
-            </div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== FAQ SECTION ===== -->
-<section id="faqSection">
-  <div class="page-container">
-    <div class="container">
-      <div class="page-header">
-        <h1><i class="bi bi-question-circle"></i> Frequently Asked Questions</h1>
-        <p>Find answers to the most common questions about our grocery delivery service.</p>
-      </div>
-      <div class="faq-search-wrapper">
-        <div class="faq-search-box">
-          <i class="bi bi-search"></i>
-          <input type="text" id="faqSearchInput" placeholder="Search FAQs..." oninput="filterFAQs()">
-        </div>
-      </div>
-      <div class="faq-container" id="faqContainer">
-        <!-- Ordering -->
-        <div class="faq-category"><h3><i class="bi bi-cart-check"></i> Ordering</h3>
-          <div class="faq-item active"><div class="faq-question" onclick="toggleFAQ(this)"><span>How do I place an order?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>Simply browse our products, click "Add to Cart" on items you want, and proceed to checkout. You can review your cart anytime by clicking the cart icon in the header.</p></div></div>
-          <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Can I modify my order after placing it?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>Yes, up to 30 minutes before delivery. Contact support@todayshop.com or call +91 98765 43210.</p></div></div>
-          <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Is there a minimum order value?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>No minimum. Orders below ₹500 have a ₹50 delivery fee.</p></div></div>
-        </div>
-        <!-- Delivery -->
-        <div class="faq-category"><h3><i class="bi bi-truck"></i> Delivery</h3>
-          <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>What are the delivery charges?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>Free above ₹500. ₹50 below ₹500. Express ₹100 for 20-min delivery.</p></div></div>
-          <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>How long does delivery take?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>30-60 min standard, up to 90 min peak. Express 20 min.</p></div></div>
-          <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Do you deliver on Sundays?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>Yes, 7 days a week. Sunday hours 9 AM – 9 PM.</p></div></div>
-        </div>
-        <!-- Payment -->
-        <div class="faq-category"><h3><i class="bi bi-credit-card"></i> Payment</h3>
-          <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>What payment methods do you accept?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>Cards, UPI, Net Banking, Cash on Delivery, Sodexo.</p></div></div>
-          <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>Is it safe to pay online?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>Absolutely. 256-bit SSL encryption, PCI-DSS compliant.</p></div></div>
-        </div>
-        <!-- Returns -->
-        <div class="faq-category"><h3><i class="bi bi-arrow-repeat"></i> Returns & Refunds</h3>
-          <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>What is your return policy?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>100% satisfaction. Return within 24h, perishables within 2h.</p></div></div>
-          <div class="faq-item"><div class="faq-question" onclick="toggleFAQ(this)"><span>How long does a refund take?</span><i class="bi bi-chevron-down"></i></div><div class="faq-answer"><p>3-5 business days after return.</p></div></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== CART SIDEBAR ===== -->
-<div id="cartSidebar" class="cart-sidebar">
-  <div class="cart-header"><h5><i class="bi bi-bag-check"></i> Your Cart</h5><button id="closeCartBtn" class="close-cart-btn"><i class="bi bi-x-lg"></i></button></div>
-  <div id="cartItemsList" class="cart-items-container"></div>
-  <div class="cart-footer">
-    <div class="cart-total-row"><span>Total Items:</span><span id="cartTotalQty">0</span></div>
-    <div class="cart-total-row total-price-row"><span>Total Price:</span><span id="cartTotalPrice">₹0</span></div>
-    <button class="checkout-btn" id="checkoutBtn">Proceed to Checkout <i class="bi bi-arrow-right-circle"></i></button>
-  </div>
-</div>
-<div id="cartOverlay" class="cart-overlay"></div>
-<div id="toastMessage" class="toast-message">Item added to cart</div>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4 mb-3"><h5 class="footer-logo">🛒 Today Shop</h5><p class="footer-text">Fresh groceries delivered to your doorstep. Quality you can trust.</p></div>
-      <div class="col-md-2 mb-3"><h6>Shop</h6><ul class="list-unstyled"><li><a href="#homeSection">All Products</a></li><li><a href="#">Offers</a></li><li><a href="#">Weekly Deals</a></li></ul></div>
-      <div class="col-md-2 mb-3"><h6>Support</h6><ul class="list-unstyled"><li><a href="#contactSection">Contact Us</a></li><li><a href="#faqSection">FAQs</a></li><li><a href="#">Delivery Info</a></li></ul></div>
-      <div class="col-md-4 mb-3"><h6>Download App</h6><div class="d-flex gap-3"><i class="bi bi-google-play fs-2 app-icon"></i><i class="bi bi-apple fs-2 app-icon"></i></div></div>
-    </div>
-    <hr><div class="copyright">© 2025 Today Shop — Fresh Grocery Delivery</div>
-  </div>
-</footer>
-
-<!-- Separate JavaScript file -->
-<script src="script.js"></script>
+    <!-- Separate JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
