@@ -316,7 +316,8 @@ function renderProducts() {
             }
         }
 
-        const stockBadge = p.stock < 10 ? `<span class="stock-warning">🔥 Only ${p.stock} left</span>` : '';
+        // Show "Only X left" for ALL products
+        const stockText = p.stock > 0 ? `<span class="stock-text">Only ${p.stock} left</span>` : '<span class="stock-text out-of-stock">Out of Stock</span>';
 
         return `
             <div class="col-6 col-md-4 col-lg-3">
@@ -336,7 +337,7 @@ function renderProducts() {
                         <span class="product-price">₹${p.price}</span>
                         ${p.originalPrice ? `<span class="product-price-original">₹${p.originalPrice}</span>` : ''}
                     </div>
-                    ${stockBadge}
+                    ${stockText}
                     <p class="product-desc">${p.desc}</p>
                     <div class="product-actions">
                         <button class="btn-details" onclick="showProductDetails(${p.id})">Details</button>
