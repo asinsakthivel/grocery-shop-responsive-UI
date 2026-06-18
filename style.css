@@ -1013,21 +1013,32 @@ body.dark-mode .household-badge {
     font-weight: 600;
 }
 
-.review-count {
-    color: #999 !important;
-    font-weight: 400 !important;
-    font-size: 13px;
-}
-
-.stock-warning {
+/* ===== STOCK TEXT ===== */
+.stock-text {
     display: inline-block;
     font-size: 12px;
-    font-weight: 700;
+    font-weight: 600;
     color: #e74c3c;
     margin: 4px 0;
-    padding: 3px 12px;
+    padding: 2px 10px;
     background: #fde8e8;
     border-radius: 12px;
+}
+
+.stock-text.out-of-stock {
+    background: #e8e8e8;
+    color: #888;
+}
+
+/* Dark mode stock text */
+body.dark-mode .stock-text {
+    background: rgba(231, 76, 60, 0.2);
+    color: #ff6b6b;
+}
+
+body.dark-mode .stock-text.out-of-stock {
+    background: rgba(255, 255, 255, 0.05);
+    color: #8888aa;
 }
 
 .product-desc {
